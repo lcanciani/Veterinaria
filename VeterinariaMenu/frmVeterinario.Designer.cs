@@ -49,7 +49,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCiudades = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -202,6 +202,7 @@
             this.button5.TabIndex = 20;
             this.button5.Text = "Limpiar";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dateTimePicker1
             // 
@@ -227,20 +228,23 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Ciudad de recidencia";
             // 
-            // comboBox1
+            // cboCiudades
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(157, 216);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 24;
+            this.cboCiudades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboCiudades.FormattingEnabled = true;
+            this.cboCiudades.Location = new System.Drawing.Point(157, 216);
+            this.cboCiudades.Name = "cboCiudades";
+            this.cboCiudades.Size = new System.Drawing.Size(200, 21);
+            this.cboCiudades.TabIndex = 24;
+            
             // 
             // FrmVeterinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 354);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboCiudades);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -265,6 +269,7 @@
             this.Name = "FrmVeterinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veterinario";
+            this.Load += new System.EventHandler(this.FrmVeterinario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +298,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCiudades;
     }
 }

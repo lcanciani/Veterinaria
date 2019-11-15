@@ -1,6 +1,6 @@
 ﻿namespace VeterinariaMenu
 {
-    partial class Empleados
+    partial class FormEmpleados
     {
         /// <summary>
         /// Required designer variable.

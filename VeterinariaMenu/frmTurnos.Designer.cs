@@ -1,6 +1,6 @@
 ﻿namespace VeterinariaMenu
 {
-    partial class Turnos
+    partial class FrmTurnos
     {
         /// <summary>
         /// Required designer variable.

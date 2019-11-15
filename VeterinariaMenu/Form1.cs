@@ -67,19 +67,19 @@ namespace VeterinariaMenu
 
         private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Mascota mta = new Mascota();
+            FrmMascota mta = new FrmMascota();
             mta.ShowDialog();
         }
 
         private void veterinarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Veterinario vto = new Veterinario();
+            FrmVeterinario vto = new FrmVeterinario();
             vto.ShowDialog();
         }
 
         private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Empleados emp = new Empleados();
+            FormEmpleados emp = new FormEmpleados();
             emp.ShowDialog();
         }
 
@@ -125,7 +125,7 @@ namespace VeterinariaMenu
 
         private void verTurnosAgendadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Turnos trn = new Turnos();
+            FrmTurnos trn = new FrmTurnos();
             trn.ShowDialog();
         }
     }

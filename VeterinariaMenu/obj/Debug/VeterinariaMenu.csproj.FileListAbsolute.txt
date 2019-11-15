@@ -11,3 +11,17 @@ c:\users\lazar\documents\visual studio 2015\Projects\VeterinariaMenu\Veterinaria
 c:\users\lazar\documents\visual studio 2015\Projects\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.Veterinario.resources
 c:\users\lazar\documents\visual studio 2015\Projects\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.Empleados.resources
 C:\Users\lazar\Documents\Visual Studio 2015\Projects\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.Turnos.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\bin\Debug\VeterinariaMenu.exe.config
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\bin\Debug\VeterinariaMenu.exe
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\bin\Debug\VeterinariaMenu.pdb
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.csprojAssemblyReference.cache
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FormEmpleados.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.Form1.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FrmMascota.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.Properties.Resources.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FrmTurnos.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FrmVeterinario.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.csproj.GenerateResource.cache
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.csproj.CoreCompileInputs.cache
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.exe
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.pdb

@@ -1,6 +1,6 @@
 ﻿namespace VeterinariaMenu
 {
-    partial class Mascota
+    partial class FrmMascota
     {
         /// <summary>
         /// Required designer variable.

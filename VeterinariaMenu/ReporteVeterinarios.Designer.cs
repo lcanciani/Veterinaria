@@ -29,19 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.VeterinariaDataSet = new VeterinariaMenu.VeterinariaDataSet();
+            this.veterinariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.veterinariosTableAdapter = new VeterinariaMenu.VeterinariaDataSetTableAdapters.veterinariosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.VeterinariaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            reportDataSource1.Name = "TablaVeterinario";
+            reportDataSource1.Value = this.veterinariosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "VeterinariaMenu.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 426);
+            this.reportViewer1.Size = new System.Drawing.Size(418, 426);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // VeterinariaDataSet
+            // 
+            this.VeterinariaDataSet.DataSetName = "VeterinariaDataSet";
+            this.VeterinariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // veterinariosBindingSource
+            // 
+            this.veterinariosBindingSource.DataMember = "veterinarios";
+            this.veterinariosBindingSource.DataSource = this.VeterinariaDataSet;
+            // 
+            // veterinariosTableAdapter
+            // 
+            this.veterinariosTableAdapter.ClearBeforeFill = true;
             // 
             // ReporteVeterinarios
             // 
@@ -52,7 +74,8 @@
             this.Name = "ReporteVeterinarios";
             this.Text = "ReporteVeterinarios";
             this.Load += new System.EventHandler(this.ReporteVeterinarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VeterinariaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.veterinariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -60,6 +83,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource veterinariosBindingSource;
+        private VeterinariaDataSet VeterinariaDataSet;
+        private VeterinariaDataSetTableAdapters.veterinariosTableAdapter veterinariosTableAdapter;
     }
 }

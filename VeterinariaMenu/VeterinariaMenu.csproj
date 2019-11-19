@@ -66,6 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="dataSetVeterinaria.cs">
+      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataSetVeterinaria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +114,11 @@
       <DependentUpon>ReporteVeterinarios.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="VeterinariaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VeterinariaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Veterinario.cs" />
     <EmbeddedResource Include="FormEmpleados.resx">
       <DependentUpon>FormEmpleados.cs</DependentUpon>
@@ -137,6 +150,17 @@
       <DependentUpon>ReporteVeterinarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="dataSetVeterinaria.xsc">
+      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
+    </None>
+    <None Include="dataSetVeterinaria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataSetVeterinaria.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataSetVeterinaria.xss">
+      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -147,6 +171,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="VeterinariaDataSet.xsc">
+      <DependentUpon>VeterinariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VeterinariaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VeterinariaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VeterinariaDataSet.xss">
+      <DependentUpon>VeterinariaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

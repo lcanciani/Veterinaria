@@ -21,10 +21,15 @@ namespace VeterinariaMenu
         private void ReporteVeterinarios_Load(object sender, EventArgs e)
         {
             string consultaSql = "select * from ciudades ";
-            bindingSource1.DataSource = conn.guardarTabla(consultaSql);
+            veterinariosBindingSource.DataSource = conn.guardarTabla(consultaSql);
             this.reportViewer1.RefreshReport();
 
             
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

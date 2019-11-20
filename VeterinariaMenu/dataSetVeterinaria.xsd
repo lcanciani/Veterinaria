@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="veterinariosTableAdapter" GeneratorDataComponentClassName="veterinariosTableAdapter" Name="veterinarios" UserDataComponentName="veterinariosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="VeterinariaConnectionString (Settings)" DbObjectName="Veterinaria.dbo.veterinarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="datosVeteri" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="datosVeteri" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="datosVeteri">
+              <DbSource ConnectionRef="VeterinariaConnectionString (Settings)" DbObjectName="Veterinaria.dbo.veterinarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="datosVet" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="datosVet" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="datosVet">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[veterinarios] WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)))</CommandText>
@@ -104,24 +104,114 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
               <Mapping SourceColumn="fec_nac" DataSetColumn="fec_nac" />
               <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="VeterinariaConnectionString (Settings)" DbObjectName="Veterinaria.dbo.veterinarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="datosVeterinarios" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="datosVeterinarios" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="datosVeterinarios">
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="veterinarios1TableAdapter" GeneratorDataComponentClassName="veterinarios1TableAdapter" Name="veterinarios1" UserDataComponentName="veterinarios1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="VeterinariaConnectionString (Settings)" DbObjectName="Veterinaria.dbo.veterinarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="datosVeter" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="datosVeter" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="datosVeter">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [veterinarios] WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_idCiudad = 1 AND [idCiudad] IS NULL) OR ([idCiudad] = @Original_idCiudad)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_matricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="matricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nombre" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_apellido" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="apellido" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_apellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_calle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="calle" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_calle" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="calle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_numCalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numCalle" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_numCalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numCalle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_email" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_telefono" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_telefono" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fec_nac" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fec_nac" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fec_nac" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fec_nac" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCiudad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCiudad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idCiudad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCiudad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [veterinarios] ([matricula], [nombre], [apellido], [calle], [numCalle], [email], [telefono], [fec_nac], [sexo], [idCiudad]) VALUES (@matricula, @nombre, @apellido, @calle, @numCalle, @email, @telefono, @fec_nac, @sexo, @idCiudad);
+SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad FROM veterinarios WHERE (matricula = @matricula)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@matricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="matricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@apellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@calle" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="calle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@numCalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numCalle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@telefono" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fec_nac" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fec_nac" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idCiudad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCiudad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT apellido, calle, email, fec_nac, matricula, nombre, numCalle, sexo, telefono FROM veterinarios</CommandText>
+                    <CommandText>SELECT        matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad
+FROM            veterinarios</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="VeterinariaConnectionString (Settings)" DbObjectName="Veterinaria.dbo.veterinarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="probandoSiDevuelve" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="proban2" GeneratorSourceName="probandoSiDevuelve" GetMethodModifier="Public" GetMethodName="proban2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="proban2" UserSourceName="probandoSiDevuelve">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT apellido, calle, email, fec_nac, matricula, nombre, numCalle, sexo, telefono FROM veterinarios</CommandText>
-                    <Parameters />
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [veterinarios] SET [matricula] = @matricula, [nombre] = @nombre, [apellido] = @apellido, [calle] = @calle, [numCalle] = @numCalle, [email] = @email, [telefono] = @telefono, [fec_nac] = @fec_nac, [sexo] = @sexo, [idCiudad] = @idCiudad WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_idCiudad = 1 AND [idCiudad] IS NULL) OR ([idCiudad] = @Original_idCiudad)));
+SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad FROM veterinarios WHERE (matricula = @matricula)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@matricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="matricula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@apellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@calle" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="calle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@numCalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numCalle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@telefono" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fec_nac" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fec_nac" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idCiudad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCiudad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_matricula" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="matricula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nombre" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_nombre" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="nombre" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_apellido" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="apellido" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_apellido" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="apellido" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_calle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="calle" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_calle" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="calle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_numCalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numCalle" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_numCalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numCalle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_email" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_email" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="email" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_telefono" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_telefono" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="telefono" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_fec_nac" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="fec_nac" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fec_nac" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fec_nac" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_sexo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sexo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCiudad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCiudad" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idCiudad" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCiudad" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
                   </DbCommand>
-                </SelectCommand>
+                </UpdateCommand>
               </DbSource>
-            </Sources>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="matricula" DataSetColumn="matricula" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="calle" DataSetColumn="calle" />
+              <Mapping SourceColumn="numCalle" DataSetColumn="numCalle" />
+              <Mapping SourceColumn="email" DataSetColumn="email" />
+              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
+              <Mapping SourceColumn="fec_nac" DataSetColumn="fec_nac" />
+              <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
+              <Mapping SourceColumn="idCiudad" DataSetColumn="idCiudad" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -170,10 +260,58 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="veterinarios1" msprop:Generator_TableClassName="veterinarios1DataTable" msprop:Generator_TableVarName="tableveterinarios1" msprop:Generator_RowChangedName="veterinarios1RowChanged" msprop:Generator_TablePropName="veterinarios1" msprop:Generator_RowDeletingName="veterinarios1RowDeleting" msprop:Generator_RowChangingName="veterinarios1RowChanging" msprop:Generator_RowEvHandlerName="veterinarios1RowChangeEventHandler" msprop:Generator_RowDeletedName="veterinarios1RowDeleted" msprop:Generator_RowClassName="veterinarios1Row" msprop:Generator_UserTableName="veterinarios1" msprop:Generator_RowEvArgName="veterinarios1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="matricula" msprop:Generator_ColumnVarNameInTable="columnmatricula" msprop:Generator_ColumnPropNameInRow="matricula" msprop:Generator_ColumnPropNameInTable="matriculaColumn" msprop:Generator_UserColumnName="matricula" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="calle" msprop:Generator_ColumnVarNameInTable="columncalle" msprop:Generator_ColumnPropNameInRow="calle" msprop:Generator_ColumnPropNameInTable="calleColumn" msprop:Generator_UserColumnName="calle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numCalle" msprop:Generator_ColumnVarNameInTable="columnnumCalle" msprop:Generator_ColumnPropNameInRow="numCalle" msprop:Generator_ColumnPropNameInTable="numCalleColumn" msprop:Generator_UserColumnName="numCalle" type="xs:int" minOccurs="0" />
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:int" minOccurs="0" />
+              <xs:element name="fec_nac" msprop:Generator_ColumnVarNameInTable="columnfec_nac" msprop:Generator_ColumnPropNameInRow="fec_nac" msprop:Generator_ColumnPropNameInTable="fec_nacColumn" msprop:Generator_UserColumnName="fec_nac" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="sexo" msprop:Generator_ColumnVarNameInTable="columnsexo" msprop:Generator_ColumnPropNameInRow="sexo" msprop:Generator_ColumnPropNameInTable="sexoColumn" msprop:Generator_UserColumnName="sexo" type="xs:int" minOccurs="0" />
+              <xs:element name="idCiudad" msprop:Generator_ColumnVarNameInTable="columnidCiudad" msprop:Generator_ColumnPropNameInRow="idCiudad" msprop:Generator_ColumnPropNameInTable="idCiudadColumn" msprop:Generator_UserColumnName="idCiudad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:veterinarios" />
+      <xs:field xpath="mstns:matricula" />
+    </xs:unique>
+    <xs:unique name="veterinarios1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:veterinarios1" />
       <xs:field xpath="mstns:matricula" />
     </xs:unique>
   </xs:element>

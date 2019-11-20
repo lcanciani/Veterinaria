@@ -367,8 +367,6 @@ namespace VeterinariaMenu {
             
             private global::System.Data.DataColumn columnsexo;
             
-            private global::System.Data.DataColumn columnidCiudad;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public veterinariosDataTable() {
@@ -476,14 +474,6 @@ namespace VeterinariaMenu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idCiudadColumn {
-                get {
-                    return this.columnidCiudad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -519,7 +509,7 @@ namespace VeterinariaMenu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public veterinariosRow AddveterinariosRow(int matricula, string nombre, string apellido, string calle, int numCalle, string email, int telefono, System.DateTime fec_nac, int sexo, int idCiudad) {
+            public veterinariosRow AddveterinariosRow(int matricula, string nombre, string apellido, string calle, int numCalle, string email, int telefono, System.DateTime fec_nac, int sexo) {
                 veterinariosRow rowveterinariosRow = ((veterinariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         matricula,
@@ -530,8 +520,7 @@ namespace VeterinariaMenu {
                         email,
                         telefono,
                         fec_nac,
-                        sexo,
-                        idCiudad};
+                        sexo};
                 rowveterinariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowveterinariosRow);
                 return rowveterinariosRow;
@@ -570,7 +559,6 @@ namespace VeterinariaMenu {
                 this.columntelefono = base.Columns["telefono"];
                 this.columnfec_nac = base.Columns["fec_nac"];
                 this.columnsexo = base.Columns["sexo"];
-                this.columnidCiudad = base.Columns["idCiudad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -594,8 +582,6 @@ namespace VeterinariaMenu {
                 base.Columns.Add(this.columnfec_nac);
                 this.columnsexo = new global::System.Data.DataColumn("sexo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsexo);
-                this.columnidCiudad = new global::System.Data.DataColumn("idCiudad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidCiudad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnmatricula}, true));
                 this.columnmatricula.AllowDBNull = false;
@@ -1506,22 +1492,6 @@ namespace VeterinariaMenu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int idCiudad {
-                get {
-                    try {
-                        return ((int)(this[this.tableveterinarios.idCiudadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idCiudad\' de la tabla \'veterinarios\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableveterinarios.idCiudadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsnombreNull() {
                 return this.IsNull(this.tableveterinarios.nombreColumn);
             }
@@ -1614,18 +1584,6 @@ namespace VeterinariaMenu {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetsexoNull() {
                 this[this.tableveterinarios.sexoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsidCiudadNull() {
-                return this.IsNull(this.tableveterinarios.idCiudadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetidCiudadNull() {
-                this[this.tableveterinarios.idCiudadColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2158,11 +2116,10 @@ namespace VeterinariaMenu.dataSetVeterinariaTableAdapters {
             tableMapping.ColumnMappings.Add("telefono", "telefono");
             tableMapping.ColumnMappings.Add("fec_nac", "fec_nac");
             tableMapping.ColumnMappings.Add("sexo", "sexo");
-            tableMapping.ColumnMappings.Add("idCiudad", "idCiudad");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[veterinarios] WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_idCiudad = 1 AND [idCiudad] IS NULL) OR ([idCiudad] = @Original_idCiudad)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[veterinarios] WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2181,12 +2138,10 @@ namespace VeterinariaMenu.dataSetVeterinariaTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[veterinarios] ([matricula], [nombre], [apellido], [calle], [numCalle], [email], [telefono], [fec_nac], [sexo], [idCiudad]) VALUES (@matricula, @nombre, @apellido, @calle, @numCalle, @email, @telefono, @fec_nac, @sexo, @idCiudad);
-SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad FROM veterinarios WHERE (matricula = @matricula)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[veterinarios] ([matricula], [nombre], [apellido], [calle], [numCalle], [email], [telefono], [fec_nac], [sexo]) VALUES (@matricula, @nombre, @apellido, @calle, @numCalle, @email, @telefono, @fec_nac, @sexo);
+SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo FROM veterinarios WHERE (matricula = @matricula)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2197,11 +2152,10 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[veterinarios] SET [matricula] = @matricula, [nombre] = @nombre, [apellido] = @apellido, [calle] = @calle, [numCalle] = @numCalle, [email] = @email, [telefono] = @telefono, [fec_nac] = @fec_nac, [sexo] = @sexo, [idCiudad] = @idCiudad WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_idCiudad = 1 AND [idCiudad] IS NULL) OR ([idCiudad] = @Original_idCiudad)));
-SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad FROM veterinarios WHERE (matricula = @matricula)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[veterinarios] SET [matricula] = @matricula, [nombre] = @nombre, [apellido] = @apellido, [calle] = @calle, [numCalle] = @numCalle, [email] = @email, [telefono] = @telefono, [fec_nac] = @fec_nac, [sexo] = @sexo WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)));
+SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo FROM veterinarios WHERE (matricula = @matricula)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2212,7 +2166,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2230,8 +2183,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2248,7 +2199,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, se" +
-                "xo, idCiudad FROM dbo.veterinarios";
+                "xo FROM dbo.veterinarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

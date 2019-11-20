@@ -12,7 +12,8 @@ namespace VeterinariaMenu
 {
     public partial class ReporteVeterinarios : Form
     {
-        AccesoDatos conn = new AccesoDatos();
+        private const string StringConexion = @"Data Source=TOTHEMOON\SQLEXPRESS;Initial Catalog=Veterinaria;Integrated Security=True";
+        AccesoDatos conn = new AccesoDatos(StringConexion);
         public ReporteVeterinarios()
         {
             InitializeComponent();
@@ -20,8 +21,11 @@ namespace VeterinariaMenu
 
         private void ReporteVeterinarios_Load(object sender, EventArgs e)
         {
-            string consultaSql = "select * from ciudades ";
-            veterinariosBindingSource.DataSource = conn.guardarTabla(consultaSql);
+            string consultaSql = "select * from veterinarios ";
+
+
+
+            
             this.reportViewer1.RefreshReport();
 
             
@@ -30,6 +34,16 @@ namespace VeterinariaMenu
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string consultaSql = "select * from veterinarios ";
+
+
+
+            veterinariosBindingSource.DataSource = conn.guardarTabla(consultaSql);
+            this.reportViewer1.RefreshReport();
         }
     }
 }

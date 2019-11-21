@@ -21,12 +21,15 @@ namespace VeterinariaMenu
 
         private void ReporteVeterinarios_Load(object sender, EventArgs e)
         {
-            string consultaSql = "select * from veterinarios ";
+            // TODO: esta línea de código carga datos en la tabla 'datosVeterinaria.veterinarios' Puede moverla o quitarla según sea necesario.
+            this.veterinariosTableAdapter.mostrarVet(this.datosVeterinaria.veterinarios);
 
 
 
-            
+
+
             this.reportViewer1.RefreshReport();
+
 
             
         }
@@ -38,12 +41,7 @@ namespace VeterinariaMenu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string consultaSql = "select * from veterinarios ";
-
-
-
-            veterinariosBindingSource.DataSource = conn.guardarTabla(consultaSql);
-            this.reportViewer1.RefreshReport();
+            
         }
     }
 }

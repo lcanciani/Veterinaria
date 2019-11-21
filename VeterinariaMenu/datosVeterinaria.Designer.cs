@@ -20,9 +20,9 @@ namespace VeterinariaMenu {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("VeterinariaDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("datosVeterinaria")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class VeterinariaDataSet : global::System.Data.DataSet {
+    public partial class datosVeterinaria : global::System.Data.DataSet {
         
         private ciudadesDataTable tableciudades;
         
@@ -32,13 +32,11 @@ namespace VeterinariaMenu {
         
         private global::System.Data.DataRelation relationfk_ciudades;
         
-        private global::System.Data.DataRelation relationfk_ciudades1;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public VeterinariaDataSet() {
+        public datosVeterinaria() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +47,7 @@ namespace VeterinariaMenu {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected VeterinariaDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected datosVeterinaria(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -161,7 +159,7 @@ namespace VeterinariaMenu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            VeterinariaDataSet cln = ((VeterinariaDataSet)(base.Clone()));
+            datosVeterinaria cln = ((datosVeterinaria)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -247,15 +245,14 @@ namespace VeterinariaMenu {
                 }
             }
             this.relationfk_ciudades = this.Relations["fk_ciudades"];
-            this.relationfk_ciudades1 = this.Relations["fk_ciudades1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "VeterinariaDataSet";
+            this.DataSetName = "datosVeterinaria";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/VeterinariaDataSet.xsd";
+            this.Namespace = "http://tempuri.org/datosVeterinaria.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableciudades = new ciudadesDataTable();
@@ -268,10 +265,6 @@ namespace VeterinariaMenu {
                         this.tableciudades.idCiudadColumn}, new global::System.Data.DataColumn[] {
                         this.tablepropietarios.idCiudadColumn}, false);
             this.Relations.Add(this.relationfk_ciudades);
-            this.relationfk_ciudades1 = new global::System.Data.DataRelation("fk_ciudades1", new global::System.Data.DataColumn[] {
-                        this.tableciudades.idCiudadColumn}, new global::System.Data.DataColumn[] {
-                        this.tableveterinarios.idCiudadColumn}, false);
-            this.Relations.Add(this.relationfk_ciudades1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -303,7 +296,7 @@ namespace VeterinariaMenu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            VeterinariaDataSet ds = new VeterinariaDataSet();
+            datosVeterinaria ds = new datosVeterinaria();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -574,7 +567,7 @@ namespace VeterinariaMenu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                VeterinariaDataSet ds = new VeterinariaDataSet();
+                datosVeterinaria ds = new datosVeterinaria();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -955,7 +948,7 @@ namespace VeterinariaMenu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                VeterinariaDataSet ds = new VeterinariaDataSet();
+                datosVeterinaria ds = new datosVeterinaria();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1038,8 +1031,6 @@ namespace VeterinariaMenu {
             private global::System.Data.DataColumn columnfec_nac;
             
             private global::System.Data.DataColumn columnsexo;
-            
-            private global::System.Data.DataColumn columnidCiudad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1148,14 +1139,6 @@ namespace VeterinariaMenu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn idCiudadColumn {
-                get {
-                    return this.columnidCiudad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1191,7 +1174,7 @@ namespace VeterinariaMenu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public veterinariosRow AddveterinariosRow(int matricula, string nombre, string apellido, string calle, int numCalle, string email, int telefono, System.DateTime fec_nac, int sexo, ciudadesRow parentciudadesRowByfk_ciudades1) {
+            public veterinariosRow AddveterinariosRow(int matricula, string nombre, string apellido, string calle, int numCalle, string email, int telefono, System.DateTime fec_nac, int sexo) {
                 veterinariosRow rowveterinariosRow = ((veterinariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         matricula,
@@ -1202,11 +1185,7 @@ namespace VeterinariaMenu {
                         email,
                         telefono,
                         fec_nac,
-                        sexo,
-                        null};
-                if ((parentciudadesRowByfk_ciudades1 != null)) {
-                    columnValuesArray[9] = parentciudadesRowByfk_ciudades1[0];
-                }
+                        sexo};
                 rowveterinariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowveterinariosRow);
                 return rowveterinariosRow;
@@ -1245,7 +1224,6 @@ namespace VeterinariaMenu {
                 this.columntelefono = base.Columns["telefono"];
                 this.columnfec_nac = base.Columns["fec_nac"];
                 this.columnsexo = base.Columns["sexo"];
-                this.columnidCiudad = base.Columns["idCiudad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1269,8 +1247,6 @@ namespace VeterinariaMenu {
                 base.Columns.Add(this.columnfec_nac);
                 this.columnsexo = new global::System.Data.DataColumn("sexo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsexo);
-                this.columnidCiudad = new global::System.Data.DataColumn("idCiudad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidCiudad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnmatricula}, true));
                 this.columnmatricula.AllowDBNull = false;
@@ -1346,7 +1322,7 @@ namespace VeterinariaMenu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                VeterinariaDataSet ds = new VeterinariaDataSet();
+                datosVeterinaria ds = new datosVeterinaria();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1466,17 +1442,6 @@ namespace VeterinariaMenu {
                 }
                 else {
                     return ((propietariosRow[])(base.GetChildRows(this.Table.ChildRelations["fk_ciudades"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public veterinariosRow[] GetveterinariosRows() {
-                if ((this.Table.ChildRelations["fk_ciudades1"] == null)) {
-                    return new veterinariosRow[0];
-                }
-                else {
-                    return ((veterinariosRow[])(base.GetChildRows(this.Table.ChildRelations["fk_ciudades1"])));
                 }
             }
         }
@@ -1897,33 +1862,6 @@ namespace VeterinariaMenu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int idCiudad {
-                get {
-                    try {
-                        return ((int)(this[this.tableveterinarios.idCiudadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idCiudad\' de la tabla \'veterinarios\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableveterinarios.idCiudadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ciudadesRow ciudadesRow {
-                get {
-                    return ((ciudadesRow)(this.GetParentRow(this.Table.ParentRelations["fk_ciudades1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_ciudades1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsnombreNull() {
                 return this.IsNull(this.tableveterinarios.nombreColumn);
             }
@@ -2016,18 +1954,6 @@ namespace VeterinariaMenu {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetsexoNull() {
                 this[this.tableveterinarios.sexoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsidCiudadNull() {
-                return this.IsNull(this.tableveterinarios.idCiudadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetidCiudadNull() {
-                this[this.tableveterinarios.idCiudadColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2134,7 +2060,7 @@ namespace VeterinariaMenu {
         }
     }
 }
-namespace VeterinariaMenu.VeterinariaDataSetTableAdapters {
+namespace VeterinariaMenu.datosVeterinariaTableAdapters {
     
     
     /// <summary>
@@ -2309,7 +2235,7 @@ namespace VeterinariaMenu.VeterinariaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(VeterinariaDataSet.ciudadesDataTable dataTable) {
+        public virtual int Fill(datosVeterinaria.ciudadesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2322,9 +2248,9 @@ namespace VeterinariaMenu.VeterinariaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual VeterinariaDataSet.ciudadesDataTable GetData() {
+        public virtual datosVeterinaria.ciudadesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            VeterinariaDataSet.ciudadesDataTable dataTable = new VeterinariaDataSet.ciudadesDataTable();
+            datosVeterinaria.ciudadesDataTable dataTable = new datosVeterinaria.ciudadesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2332,14 +2258,14 @@ namespace VeterinariaMenu.VeterinariaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(VeterinariaDataSet.ciudadesDataTable dataTable) {
+        public virtual int Update(datosVeterinaria.ciudadesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(VeterinariaDataSet dataSet) {
+        public virtual int Update(datosVeterinaria dataSet) {
             return this.Adapter.Update(dataSet, "ciudades");
         }
         
@@ -2681,7 +2607,7 @@ SELECT idPropietario, nombre, apellido, calle, numCalle, telefono, email, sexo, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(VeterinariaDataSet.propietariosDataTable dataTable) {
+        public virtual int Fill(datosVeterinaria.propietariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2694,9 +2620,9 @@ SELECT idPropietario, nombre, apellido, calle, numCalle, telefono, email, sexo, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual VeterinariaDataSet.propietariosDataTable GetData() {
+        public virtual datosVeterinaria.propietariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            VeterinariaDataSet.propietariosDataTable dataTable = new VeterinariaDataSet.propietariosDataTable();
+            datosVeterinaria.propietariosDataTable dataTable = new datosVeterinaria.propietariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2704,14 +2630,14 @@ SELECT idPropietario, nombre, apellido, calle, numCalle, telefono, email, sexo, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(VeterinariaDataSet.propietariosDataTable dataTable) {
+        public virtual int Update(datosVeterinaria.propietariosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(VeterinariaDataSet dataSet) {
+        public virtual int Update(datosVeterinaria dataSet) {
             return this.Adapter.Update(dataSet, "propietarios");
         }
         
@@ -3194,11 +3120,10 @@ SELECT idPropietario, nombre, apellido, calle, numCalle, telefono, email, sexo, 
             tableMapping.ColumnMappings.Add("telefono", "telefono");
             tableMapping.ColumnMappings.Add("fec_nac", "fec_nac");
             tableMapping.ColumnMappings.Add("sexo", "sexo");
-            tableMapping.ColumnMappings.Add("idCiudad", "idCiudad");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[veterinarios] WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_idCiudad = 1 AND [idCiudad] IS NULL) OR ([idCiudad] = @Original_idCiudad)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [veterinarios] WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3217,12 +3142,10 @@ SELECT idPropietario, nombre, apellido, calle, numCalle, telefono, email, sexo, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[veterinarios] ([matricula], [nombre], [apellido], [calle], [numCalle], [email], [telefono], [fec_nac], [sexo], [idCiudad]) VALUES (@matricula, @nombre, @apellido, @calle, @numCalle, @email, @telefono, @fec_nac, @sexo, @idCiudad);
-SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad FROM veterinarios WHERE (matricula = @matricula)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [veterinarios] ([matricula], [nombre], [apellido], [calle], [numCalle], [email], [telefono], [fec_nac], [sexo]) VALUES (@matricula, @nombre, @apellido, @calle, @numCalle, @email, @telefono, @fec_nac, @sexo);
+SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo FROM veterinarios WHERE (matricula = @matricula)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3233,11 +3156,10 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[veterinarios] SET [matricula] = @matricula, [nombre] = @nombre, [apellido] = @apellido, [calle] = @calle, [numCalle] = @numCalle, [email] = @email, [telefono] = @telefono, [fec_nac] = @fec_nac, [sexo] = @sexo, [idCiudad] = @idCiudad WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)) AND ((@IsNull_idCiudad = 1 AND [idCiudad] IS NULL) OR ([idCiudad] = @Original_idCiudad)));
-SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad FROM veterinarios WHERE (matricula = @matricula)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [veterinarios] SET [matricula] = @matricula, [nombre] = @nombre, [apellido] = @apellido, [calle] = @calle, [numCalle] = @numCalle, [email] = @email, [telefono] = @telefono, [fec_nac] = @fec_nac, [sexo] = @sexo WHERE (([matricula] = @Original_matricula) AND ((@IsNull_nombre = 1 AND [nombre] IS NULL) OR ([nombre] = @Original_nombre)) AND ((@IsNull_apellido = 1 AND [apellido] IS NULL) OR ([apellido] = @Original_apellido)) AND ((@IsNull_calle = 1 AND [calle] IS NULL) OR ([calle] = @Original_calle)) AND ((@IsNull_numCalle = 1 AND [numCalle] IS NULL) OR ([numCalle] = @Original_numCalle)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_telefono = 1 AND [telefono] IS NULL) OR ([telefono] = @Original_telefono)) AND ((@IsNull_fec_nac = 1 AND [fec_nac] IS NULL) OR ([fec_nac] = @Original_fec_nac)) AND ((@IsNull_sexo = 1 AND [sexo] IS NULL) OR ([sexo] = @Original_sexo)));
+SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo FROM veterinarios WHERE (matricula = @matricula)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3248,7 +3170,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefono", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_matricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matricula", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3266,8 +3187,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fec_nac", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fec_nac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCiudad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCiudad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3283,8 +3202,8 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, se" +
-                "xo, idCiudad FROM dbo.veterinarios";
+            this._commandCollection[0].CommandText = "SELECT        matricula, nombre, apellido, calle, numCalle, email, telefono, fec_" +
+                "nac, sexo\r\nFROM            veterinarios";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3292,7 +3211,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(VeterinariaDataSet.veterinariosDataTable dataTable) {
+        public virtual int mostrarVet(datosVeterinaria.veterinariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3305,9 +3224,9 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual VeterinariaDataSet.veterinariosDataTable GetData() {
+        public virtual datosVeterinaria.veterinariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            VeterinariaDataSet.veterinariosDataTable dataTable = new VeterinariaDataSet.veterinariosDataTable();
+            datosVeterinaria.veterinariosDataTable dataTable = new datosVeterinaria.veterinariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3315,14 +3234,14 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(VeterinariaDataSet.veterinariosDataTable dataTable) {
+        public virtual int Update(datosVeterinaria.veterinariosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(VeterinariaDataSet dataSet) {
+        public virtual int Update(datosVeterinaria dataSet) {
             return this.Adapter.Update(dataSet, "veterinarios");
         }
         
@@ -3345,7 +3264,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_matricula, string Original_nombre, string Original_apellido, string Original_calle, global::System.Nullable<int> Original_numCalle, string Original_email, global::System.Nullable<int> Original_telefono, global::System.Nullable<global::System.DateTime> Original_fec_nac, global::System.Nullable<int> Original_sexo, global::System.Nullable<int> Original_idCiudad) {
+        public virtual int Delete(int Original_matricula, string Original_nombre, string Original_apellido, string Original_calle, global::System.Nullable<int> Original_numCalle, string Original_email, global::System.Nullable<int> Original_telefono, global::System.Nullable<global::System.DateTime> Original_fec_nac, global::System.Nullable<int> Original_sexo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_matricula));
             if ((Original_nombre == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -3411,14 +3330,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_idCiudad.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_idCiudad.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3439,7 +3350,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int matricula, string nombre, string apellido, string calle, global::System.Nullable<int> numCalle, string email, global::System.Nullable<int> telefono, global::System.Nullable<global::System.DateTime> fec_nac, global::System.Nullable<int> sexo, global::System.Nullable<int> idCiudad) {
+        public virtual int Insert(int matricula, string nombre, string apellido, string calle, global::System.Nullable<int> numCalle, string email, global::System.Nullable<int> telefono, global::System.Nullable<global::System.DateTime> fec_nac, global::System.Nullable<int> sexo) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(matricula));
             if ((nombre == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3489,12 +3400,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((idCiudad.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(idCiudad.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3525,7 +3430,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
                     global::System.Nullable<int> telefono, 
                     global::System.Nullable<global::System.DateTime> fec_nac, 
                     global::System.Nullable<int> sexo, 
-                    global::System.Nullable<int> idCiudad, 
                     int Original_matricula, 
                     string Original_nombre, 
                     string Original_apellido, 
@@ -3534,8 +3438,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
                     string Original_email, 
                     global::System.Nullable<int> Original_telefono, 
                     global::System.Nullable<global::System.DateTime> Original_fec_nac, 
-                    global::System.Nullable<int> Original_sexo, 
-                    global::System.Nullable<int> Original_idCiudad) {
+                    global::System.Nullable<int> Original_sexo) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(matricula));
             if ((nombre == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -3585,84 +3488,70 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((idCiudad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(idCiudad.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_matricula));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_matricula));
             if ((Original_nombre == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_nombre));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_nombre));
             }
             if ((Original_apellido == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_apellido));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_apellido));
             }
             if ((Original_calle == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_calle));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_calle));
             }
             if ((Original_numCalle.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_numCalle.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_numCalle.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             if ((Original_email == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_email));
             }
             if ((Original_telefono.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_telefono.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_telefono.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_fec_nac.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_fec_nac.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_fec_nac.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_sexo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_sexo.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_sexo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            if ((Original_idCiudad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_idCiudad.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3693,7 +3582,6 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
                     global::System.Nullable<int> telefono, 
                     global::System.Nullable<global::System.DateTime> fec_nac, 
                     global::System.Nullable<int> sexo, 
-                    global::System.Nullable<int> idCiudad, 
                     int Original_matricula, 
                     string Original_nombre, 
                     string Original_apellido, 
@@ -3702,9 +3590,8 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
                     string Original_email, 
                     global::System.Nullable<int> Original_telefono, 
                     global::System.Nullable<global::System.DateTime> Original_fec_nac, 
-                    global::System.Nullable<int> Original_sexo, 
-                    global::System.Nullable<int> Original_idCiudad) {
-            return this.Update(Original_matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, idCiudad, Original_matricula, Original_nombre, Original_apellido, Original_calle, Original_numCalle, Original_email, Original_telefono, Original_fec_nac, Original_sexo, Original_idCiudad);
+                    global::System.Nullable<int> Original_sexo) {
+            return this.Update(Original_matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, sexo, Original_matricula, Original_nombre, Original_apellido, Original_calle, Original_numCalle, Original_email, Original_telefono, Original_fec_nac, Original_sexo);
         }
     }
     
@@ -3845,7 +3732,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(VeterinariaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(datosVeterinaria dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._ciudadesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ciudades.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -3882,7 +3769,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(VeterinariaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(datosVeterinaria dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._ciudadesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ciudades.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -3916,7 +3803,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(VeterinariaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(datosVeterinaria dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._veterinariosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.veterinarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -3974,7 +3861,7 @@ SELECT matricula, nombre, apellido, calle, numCalle, email, telefono, fec_nac, s
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(VeterinariaDataSet dataSet) {
+        public virtual int UpdateAll(datosVeterinaria dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

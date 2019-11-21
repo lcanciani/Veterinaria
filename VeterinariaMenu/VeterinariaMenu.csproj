@@ -66,13 +66,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
-    <Compile Include="dataSetVeterinaria.cs">
-      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dataSetVeterinaria.Designer.cs">
+    <Compile Include="DataSetVeterinaria.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
+      <DependentUpon>DataSetVeterinaria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datosVeterinaria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datosVeterinaria.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormEmpleados.cs">
       <SubType>Form</SubType>
@@ -114,11 +116,6 @@
       <DependentUpon>ReporteVeterinarios.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="VeterinariaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VeterinariaDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Veterinario.cs" />
     <EmbeddedResource Include="FormEmpleados.resx">
       <DependentUpon>FormEmpleados.cs</DependentUpon>
@@ -145,21 +142,32 @@
     <EmbeddedResource Include="FrmVeterinario.resx">
       <DependentUpon>FrmVeterinario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReportVet.rdlc" />
     <EmbeddedResource Include="ReporteVeterinarios.resx">
       <DependentUpon>ReporteVeterinarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
-    <None Include="dataSetVeterinaria.xsc">
-      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
+    <None Include="DataSetVeterinaria.xsc">
+      <DependentUpon>DataSetVeterinaria.xsd</DependentUpon>
     </None>
-    <None Include="dataSetVeterinaria.xsd">
+    <None Include="DataSetVeterinaria.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetVeterinaria.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetVeterinaria.xss">
+      <DependentUpon>DataSetVeterinaria.xsd</DependentUpon>
+    </None>
+    <None Include="datosVeterinaria.xsc">
+      <DependentUpon>datosVeterinaria.xsd</DependentUpon>
+    </None>
+    <None Include="datosVeterinaria.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataSetVeterinaria.Designer.cs</LastGenOutput>
+      <LastGenOutput>datosVeterinaria.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dataSetVeterinaria.xss">
-      <DependentUpon>dataSetVeterinaria.xsd</DependentUpon>
+    <None Include="datosVeterinaria.xss">
+      <DependentUpon>datosVeterinaria.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -171,17 +179,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="VeterinariaDataSet.xsc">
-      <DependentUpon>VeterinariaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="VeterinariaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VeterinariaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="VeterinariaDataSet.xss">
-      <DependentUpon>VeterinariaDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

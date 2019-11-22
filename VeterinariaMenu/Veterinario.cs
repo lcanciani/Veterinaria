@@ -17,6 +17,10 @@ namespace VeterinariaMenu
         private int telefono;
         private DateTime fecNacimiento;
         private int sexo;
+        private double sueldo;
+        private DateTime fechaIngreso;
+        private DateTime fechaEgreso;
+        private bool egreso = true;
         private int ciudad;
 
         public int pMatricula
@@ -68,6 +72,26 @@ namespace VeterinariaMenu
         {
             set { ciudad = value; }
             get { return ciudad; }
+        }
+        public double pSueldo
+        {
+            set { sueldo = value; }
+            get { return sueldo; }
+        }
+        public DateTime pFechaIngreso
+        {
+            set { fechaIngreso = value; }
+            get { return fechaIngreso; }
+        }
+        public DateTime pFechaEgreso
+        {
+            set { fechaEgreso = value; }
+            get { return fechaEgreso; }
+        }
+        public bool pEgreso
+        {
+            set { egreso = value; }
+            get { return egreso; }
         }
         public override string ToString()
         {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace VeterinariaMenu
 {
@@ -45,11 +46,13 @@ namespace VeterinariaMenu
             cn.Open();
             cmd.Connection = cn;
             cmd.CommandType = CommandType.Text;
+            
         }
         public void desconectar()
         {
             cn.Close();
             cn.Dispose();
+            
         }
         public void nonQuery(string consultaSql)
         {

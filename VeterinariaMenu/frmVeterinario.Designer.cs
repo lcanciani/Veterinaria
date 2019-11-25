@@ -452,6 +452,7 @@
             this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtApellido);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVeterinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veterinario";

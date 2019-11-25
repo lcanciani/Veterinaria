@@ -310,6 +310,7 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnSalir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMascota";
             this.Text = "Mascota";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMascota_FormClosing);

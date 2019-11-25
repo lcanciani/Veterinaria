@@ -33,9 +33,6 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veterinarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarMascotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verTurnosAgendadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contactosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,13 +50,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veterinarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mascotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,8 +66,7 @@
             // 
             this.nuevoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacienteToolStripMenuItem,
-            this.veterinarioToolStripMenuItem,
-            this.empleadoToolStripMenuItem});
+            this.veterinarioToolStripMenuItem});
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.nuevoToolStripMenuItem.Text = "Veterinaria";
@@ -88,28 +84,6 @@
             this.veterinarioToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.veterinarioToolStripMenuItem.Text = "Veterinarios...";
             this.veterinarioToolStripMenuItem.Click += new System.EventHandler(this.veterinarioToolStripMenuItem_Click);
-            // 
-            // empleadoToolStripMenuItem
-            // 
-            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.empleadoToolStripMenuItem.Text = "Propietarios";
-            this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
-            // 
-            // mostrarMascotaToolStripMenuItem
-            // 
-            this.mostrarMascotaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verTurnosAgendadosToolStripMenuItem});
-            this.mostrarMascotaToolStripMenuItem.Name = "mostrarMascotaToolStripMenuItem";
-            this.mostrarMascotaToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
-            this.mostrarMascotaToolStripMenuItem.Text = "Turnos Agendados";
-            // 
-            // verTurnosAgendadosToolStripMenuItem
-            // 
-            this.verTurnosAgendadosToolStripMenuItem.Name = "verTurnosAgendadosToolStripMenuItem";
-            this.verTurnosAgendadosToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.verTurnosAgendadosToolStripMenuItem.Text = "Turnos...";
-            this.verTurnosAgendadosToolStripMenuItem.Click += new System.EventHandler(this.verTurnosAgendadosToolStripMenuItem_Click);
             // 
             // teToolStripMenuItem
             // 
@@ -227,7 +201,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoToolStripMenuItem,
-            this.mostrarMascotaToolStripMenuItem,
             this.teToolStripMenuItem,
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -249,9 +222,16 @@
             // veterinarioToolStripMenuItem1
             // 
             this.veterinarioToolStripMenuItem1.Name = "veterinarioToolStripMenuItem1";
-            this.veterinarioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.veterinarioToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.veterinarioToolStripMenuItem1.Text = "Veterinario";
             this.veterinarioToolStripMenuItem1.Click += new System.EventHandler(this.veterinarioToolStripMenuItem1_Click);
+            // 
+            // mascotasToolStripMenuItem
+            // 
+            this.mascotasToolStripMenuItem.Name = "mascotasToolStripMenuItem";
+            this.mascotasToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.mascotasToolStripMenuItem.Text = "Mascotas";
+            this.mascotasToolStripMenuItem.Click += new System.EventHandler(this.mascotasToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -316,13 +296,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // mascotasToolStripMenuItem
-            // 
-            this.mascotasToolStripMenuItem.Name = "mascotasToolStripMenuItem";
-            this.mascotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mascotasToolStripMenuItem.Text = "Mascotas";
-            this.mascotasToolStripMenuItem.Click += new System.EventHandler(this.mascotasToolStripMenuItem_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +307,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
@@ -355,9 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veterinarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem empleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mostrarMascotaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verTurnosAgendadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personalizarCuadroToolStripMenuItem;

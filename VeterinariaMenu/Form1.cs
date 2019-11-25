@@ -144,11 +144,7 @@ namespace VeterinariaMenu
 
         private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (MessageBox.Show("¿Seguro quiere salir?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-                
+              
         }
     }
 }

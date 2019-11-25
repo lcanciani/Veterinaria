@@ -74,14 +74,14 @@
             // pacienteToolStripMenuItem
             // 
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pacienteToolStripMenuItem.Text = "Mascotas...";
             this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.pacienteToolStripMenuItem_Click);
             // 
             // veterinarioToolStripMenuItem
             // 
             this.veterinarioToolStripMenuItem.Name = "veterinarioToolStripMenuItem";
-            this.veterinarioToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.veterinarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.veterinarioToolStripMenuItem.Text = "Veterinarios...";
             this.veterinarioToolStripMenuItem.Click += new System.EventHandler(this.veterinarioToolStripMenuItem_Click);
             // 
@@ -98,13 +98,13 @@
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // contactosToolStripMenuItem1
             // 
             this.contactosToolStripMenuItem1.Name = "contactosToolStripMenuItem1";
-            this.contactosToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.contactosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.contactosToolStripMenuItem1.Text = "Contactos ";
             this.contactosToolStripMenuItem1.Click += new System.EventHandler(this.contactosToolStripMenuItem1_Click);
             // 
@@ -115,7 +115,7 @@
             this.coloresClarosToolStripMenuItem,
             this.imagenesToolStripMenuItem});
             this.personalizarCuadroToolStripMenuItem.Name = "personalizarCuadroToolStripMenuItem";
-            this.personalizarCuadroToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.personalizarCuadroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.personalizarCuadroToolStripMenuItem.Text = "Personalizar Fondo";
             // 
             // colorOscuroToolStripMenuItem
@@ -287,6 +287,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -307,12 +308,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

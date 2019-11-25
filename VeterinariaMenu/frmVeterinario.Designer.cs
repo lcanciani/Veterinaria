@@ -452,10 +452,10 @@
             this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtApellido);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVeterinario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veterinario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmVeterinario_FormClosing);
             this.Load += new System.EventHandler(this.FrmVeterinario_Load);
             this.grpSexo.ResumeLayout(false);
             this.grpSexo.PerformLayout();

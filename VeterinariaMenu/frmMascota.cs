@@ -330,8 +330,13 @@ namespace VeterinariaMenu
 
         private void FrmMascota_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("¿Seguro quiere salir?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                this.Close();
+            if (MessageBox.Show("¿Seguro quiere salir?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void FrmMascota_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

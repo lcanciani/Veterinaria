@@ -36,8 +36,8 @@ telefono int,
 fec_nac date,
 sexo int,
 sueldoNeto decimal,
-fechaIngreso datetime,
-fechaEgreso datetime,
+fechaIngreso datetime2,
+fechaEgreso datetime2,
 idCiudad int,
 
 constraint pk_veterinarios primary key (matricula),
@@ -59,8 +59,8 @@ create table mascotas
 	idPropietario int,
 	nombre nvarchar(60),
 	idRaza int,
-	peso decimal(3,2),
-	fecNac datetime,
+	peso decimal,
+	fecNac datetime2,
 	idTipo int,
 
 	constraint pk_macotas primary key(idMascota),
@@ -86,7 +86,7 @@ create table turnos
 	idMascota int,
 	idVeterinario int,
 	descripcion nvarchar(60),
-	fecha datetime,
+	fecha datetime2,
 
 	constraint pk_turnos primary key(idTurno),
 
@@ -119,3 +119,20 @@ insert into veterinarios values(11122,'Nicol','Gonzalez','ameguino',12332,'[NIqu
 insert into veterinarios values(783312,'almendrado','Carlsen','Norway',2323,'[cheesMaster@gmail.com]',3513123,'1964/12/11',1,23040,'2000/05/04',null,1)
 insert into veterinarios values(12356,'piTTy','Alvarez','themooon',8780,'[recoool@yahoo.com.ar]',3528678,'1945/01/14',1,45730,'2014/07/04',null,11)
 insert into veterinarios values(6573453,'Martin','Perez','adolfina',6666,'[thebeast@outlook.es]',3522234,'1973/09/27',1,38614,'1995/12/13','2003/01/01',7)
+
+insert into razas values (1,'Pastor aleman')
+insert into razas values (2,'Siames')
+insert into razas values (3,'Gato Azul')
+insert into razas values (4,'Bulldog')
+insert into razas values (5,'Pitbull')
+insert into razas values (6,'Pastor Velga')
+insert into razas values (7,'Canario')
+insert into razas values (8,'Caballo del Monte')
+
+insert into tipoMascota values (1,'Canino')
+insert into tipoMascota values (2,'Felino')
+insert into tipoMascota values (3,'Aves en general')
+insert into tipoMascota values (4,'Reptiles')
+insert into tipoMascota values (5,'Equino')
+insert into tipoMascota values (6,'Otros')
+

@@ -21,17 +21,10 @@ namespace VeterinariaMenu
 
         private void ReporteVeterinarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'datosVeterinaria.veterinarios' Puede moverla o quitarla según sea necesario.
-            this.veterinariosTableAdapter.mostrarVet(this.datosVeterinaria.veterinarios);
-
-
-
-
-
-            this.reportViewer1.RefreshReport();
-
-
             
+            DataTable1TableAdapter.resumenEmpleados(datosVeterinaria.DataTable1);
+            veterinariosTableAdapter.todosVeterinatios(datosVeterinaria.veterinarios);
+            this.reportViewer1.RefreshReport();            
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
@@ -42,6 +35,22 @@ namespace VeterinariaMenu
         private void button1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnFiltrarMatricula_Click(object sender, EventArgs e)
+        {
+            veterinariosTableAdapter.filtrarApellido(datosVeterinaria.veterinarios, txtFiltrarMatricula.Text);
+            reportViewer1.RefreshReport();
+            txtFiltrarMatricula.Clear();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DataTable1TableAdapter.resumenEmpleados(datosVeterinaria.DataTable1);
+            veterinariosTableAdapter.todosVeterinatios(datosVeterinaria.veterinarios);
+            this.reportViewer1.RefreshReport();
+            txtFiltrarMatricula.Clear();
         }
     }
 }

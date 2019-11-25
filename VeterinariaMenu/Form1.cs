@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VeterinariaMenu
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
             timer1.Enabled = true;
@@ -100,7 +100,8 @@ namespace VeterinariaMenu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("¿Seguro quiere salir?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -127,6 +128,27 @@ namespace VeterinariaMenu
         {
             FrmTurnos trn = new FrmTurnos();
             trn.ShowDialog();
+        }
+
+        private void veterinarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ReporteVeterinarios reporte = new ReporteVeterinarios();
+            reporte.ShowDialog();
+        }
+
+        private void mascotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReporteMascotas reporteMascotas = new FormReporteMascotas();
+            reporteMascotas.ShowDialog();
+        }
+
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro quiere salir?", "SALIENDO", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+                
         }
     }
 }

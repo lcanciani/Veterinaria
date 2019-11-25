@@ -16,7 +16,6 @@ C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\bin\Debug\Veteri
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\bin\Debug\VeterinariaMenu.pdb
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.csprojAssemblyReference.cache
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FormEmpleados.resources
-C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.Form1.resources
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FrmMascota.resources
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.Properties.Resources.resources
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FrmTurnos.resources
@@ -95,3 +94,5 @@ C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\bin\Debug\zh-HAN
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\RdlCompile.cache
 C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\RdlCompile.compiled
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.frmPrincipal.resources
+C:\Users\ferc\Desktop\Proyectos\VeterinariaMenu\VeterinariaMenu\obj\Debug\VeterinariaMenu.FormReporteMascotas.resources

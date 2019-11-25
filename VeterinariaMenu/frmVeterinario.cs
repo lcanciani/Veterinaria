@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,7 +31,8 @@ namespace VeterinariaMenu
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Close();
+            if(MessageBox.Show("¿Seguro quiere salir?","CUIDADO",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                Close();
         }
 
         private void FrmVeterinario_Load(object sender, EventArgs e)
@@ -55,9 +57,9 @@ namespace VeterinariaMenu
         {
             
                 limpiarCampos();
-            if (!nuevo)
+            if (nuevo)
                 txtMatricula.Clear();
-
+            validarDtpEgreso();
         }
         private void convertidor()
         {            
@@ -154,7 +156,8 @@ namespace VeterinariaMenu
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             nuevo = true;
-            limpiarCampos();           
+            limpiarCampos();
+            txtMatricula.Clear();
             habilitar(true);
             btnLimpiar.Enabled = true;
             txtMatricula.Focus();
@@ -178,12 +181,11 @@ namespace VeterinariaMenu
         private void lstVeterinarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarControles(lstVeterinarios.SelectedIndex);
+            validarDtpEgreso();
         }
         private void limpiarCampos()
         {
-            txtApellido.Clear();
-            if(txtMatricula.Enabled)
-                txtMatricula.Clear();
+            txtApellido.Clear();            
             txtCalle.Clear();
             txtNombre.Clear();
             txtNumeroCalle.Clear();
@@ -230,134 +232,152 @@ namespace VeterinariaMenu
             habilitar(false);
             if (!txtMatricula.Enabled)
                 txtMatricula.Clear();
-            limpiarCampos();
+           
+            if (!nuevo)
+                limpiarCampos();
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            Veterinario v = new Veterinario();
-            v.pMatricula = Convert.ToInt32(txtMatricula.Text);
-            v.pNombre = txtNombre.Text;
-            v.pApellido = txtApellido.Text;
-            v.pCalle = txtCalle.Text;
-            v.pNumCalle = Convert.ToInt32(txtNumeroCalle.Text);
-            v.pEmail = txtEmail.Text;
-            v.pTelefono = Convert.ToInt32(txtNumTelefono.Text);
-            v.pFecNacimiento = dtpFechaNacimiento.Value;
-            if (rbtMasculino.Checked)
-                v.pSexo = 1;
-            else
-                v.pSexo = 2;
-            v.pSueldo = Convert.ToDouble(txtSueldo.Text);
-            v.pFechaIngreso = dtpIngreso.Value;
-            v.pFechaEgreso = dtpEgreso.Value;
-            v.pCiudad = Convert.ToInt32(cboCiudades.SelectedValue);
-            v.pEgreso = chbEnActividad.Checked;
-
-            if (nuevo)//comprueba que sea un nuevo veterinario
+            if (validar())
             {
-                if (!validarPk(Convert.ToInt32(txtMatricula.Text)))//comprueba que el veterinario no exista en la bd 
-                {
-                    if (v.pEgreso)//si esta en actividad se inserta un null en fechaEgreso
-                    {
-                        string consultaSql = "insert into veterinarios values ("+v.pMatricula +", '"+
-                                                                                 v.pNombre+"','"+
-                                                                                 v.pApellido+"','"+
-                                                                                 v.pCalle+"',"+
-                                                                                 v.pNumCalle+",'"+
-                                                                                 v.pEmail+"',"+
-                                                                                 v.pTelefono+",'"+
-                                                                                 v.pFecNacimiento+"',"+
-                                                                                 v.pSexo+","+
-                                                                                 Convert.ToDecimal(v.pSueldo)+",'"+
-                                                                                 v.pFechaIngreso+"',"+
-                                                                                 "null,"+
-                                                                                 v.pCiudad+
-                                                                                ")";
-                        conn.nonQuery(consultaSql);
-                        cargarListaVeterinario();
-                    }
-                    else//si no esta en activadad se ingresa la fecha de baja
-                    {
-                        string consultaSql = "insert into veterinarios values (" + v.pMatricula + ", '" +
-                                                                                 v.pNombre + "','" +
-                                                                                 v.pApellido + "','" +
-                                                                                 v.pCalle + "'," +
-                                                                                 v.pNumCalle + ",'" +
-                                                                                 v.pEmail + "'," +
-                                                                                 v.pTelefono + ",'" +
-                                                                                 v.pFecNacimiento + "'," +
-                                                                                 v.pSexo + "," +
-                                                                                 v.pSueldo + ",'" +
-                                                                                 v.pFechaIngreso + "','" +
-                                                                                 v.pFechaEgreso+"'," +
-                                                                                 v.pCiudad +
-                                                                                 ")";
-                        conn.nonQuery(consultaSql);
-                        cargarListaVeterinario();
-                    }
 
-                }
 
-            }
-            else
-            {
-                if (v.pEgreso)
+                Veterinario v = new Veterinario();
+                v.pMatricula = Convert.ToInt32(txtMatricula.Text);
+                v.pNombre = txtNombre.Text;
+                v.pApellido = txtApellido.Text;
+                v.pCalle = txtCalle.Text;
+                v.pNumCalle = Convert.ToInt32(txtNumeroCalle.Text);
+                v.pEmail = txtEmail.Text;
+                v.pTelefono = Convert.ToInt32(txtNumTelefono.Text);
+                v.pFecNacimiento = dtpFechaNacimiento.Value;
+                if (rbtMasculino.Checked)
+                    v.pSexo = 1;
+                else
+                    v.pSexo = 2;
+                v.pSueldo = Convert.ToDouble(txtSueldo.Text);
+                v.pFechaIngreso = dtpIngreso.Value;
+                v.pFechaEgreso = dtpEgreso.Value;
+                v.pCiudad = Convert.ToInt32(cboCiudades.SelectedValue);
+                v.pEgreso = chbEnActividad.Checked;
+
+                if (nuevo)//comprueba que sea un nuevo veterinario
                 {
-                    string consultaSql = "update veterinarios " +
-                                           "set matricula= " + v.pMatricula + ", " +
-                                            "nombre='" + v.pNombre + "'," +
-                                            "Apellido='" + v.pApellido + "'," +
-                                            "calle='" + v.pCalle + "'," +
-                                            "numCalle=" + v.pNumCalle + "," +
-                                            "email='" + v.pEmail + "'," +
-                                            "telefono=" + v.pTelefono + ",'" +
-                                            "fec_nac='" + v.pFecNacimiento + "'," +
-                                            "sexo= " + v.pSexo + "," +
-                                            "sueldoNeto= " + v.pSueldo + "," +
-                                            "fechaIngreso= '" + v.pFechaIngreso + "'," +
-                                            "null," +
-                                            "idCiudad= " + v.pCiudad +
-                                            "where matricula= " + v.pMatricula;
-                                           
-                                            
-                    conn.nonQuery(consultaSql);
-                    cargarListaVeterinario();
+                    if (!validarPk(Convert.ToInt32(txtMatricula.Text)))//comprueba que el veterinario no exista en la bd 
+                    {
+                        if (v.pEgreso)//si esta en actividad se inserta un null en fechaEgreso
+                        {
+                            string consultaSql = "insert into veterinarios values (" + v.pMatricula + ", '" +
+                                                                                     v.pNombre + "','" +
+                                                                                     v.pApellido + "','" +
+                                                                                     v.pCalle + "'," +
+                                                                                     v.pNumCalle + ",'" +
+                                                                                     v.pEmail + "'," +
+                                                                                     v.pTelefono + ",'" +
+                                                                                     v.pFecNacimiento.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                                                     v.pSexo + "," +
+                                                                                     v.pSueldo + ",'" +
+                                                                                     v.pFechaIngreso.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                                                     "null," +
+                                                                                     v.pCiudad +
+                                                                                    ")";
+                            conn.nonQuery(consultaSql);
+                            lstVeterinarios.Items.Clear();
+                            cargarListaVeterinario();
+
+                        }
+                        else//si no esta en activadad se ingresa la fecha de baja
+                        {
+                            string consultaSql = "insert into veterinarios values (" + v.pMatricula + ", '" +
+                                                                                     v.pNombre + "','" +
+                                                                                     v.pApellido + "','" +
+                                                                                     v.pCalle + "'," +
+                                                                                     v.pNumCalle + ",'" +
+                                                                                     v.pEmail + "'," +
+                                                                                     v.pTelefono + ",'" +
+                                                                                     v.pFecNacimiento.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                                                     v.pSexo + "," +
+                                                                                     v.pSueldo + ",'" +
+                                                                                     v.pFechaIngreso.ToString("yyyy-MM-dd HH:mm:ss.fff") + "','" +
+                                                                                     v.pFechaEgreso.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                                                     v.pCiudad +
+                                                                                     ")";
+                            conn.nonQuery(consultaSql);
+                            lstVeterinarios.Items.Clear();
+                            cargarListaVeterinario();
+                        }
+
+                    }
+                    else
+                        MessageBox.Show("El veterinario que intenta ingresar ya se encuentra en la registrado", "CUIDADO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    string consultaSql = "update veterinarios " +
-                                           "set matricula= " + v.pMatricula + ", " +
-                                            "nombre='" + v.pNombre + "'," +
-                                            "Apellido='" + v.pApellido + "'," +
-                                            "calle='" + v.pCalle + "'," +
-                                            "numCalle=" + v.pNumCalle + "," +
-                                            "email='" + v.pEmail + "'," +
-                                            "telefono=" + v.pTelefono + ",'" +
-                                            "fec_nac='" + v.pFecNacimiento + "'," +
-                                            "sexo= " + v.pSexo + "," +
-                                            "sueldoNeto= " + v.pSueldo + "," +
-                                            "fechaIngreso= '" + v.pFechaIngreso + "'," +
-                                            "fechaEgreso='" +v.pFechaEgreso+"',"+
-                                            "idCiudad= " + v.pCiudad +
-                                            "where matricula= " + v.pMatricula;
-                    conn.nonQuery(consultaSql);
-                    cargarListaVeterinario();
-                }
-                
-            }
-            
+                    if (v.pEgreso)
+                    {
+                        string consultaSql = "update veterinarios " +
+                                               "set matricula= " + v.pMatricula + ", " +
+                                                "nombre='" + v.pNombre + "'," +
+                                                "Apellido='" + v.pApellido + "'," +
+                                                "calle='" + v.pCalle + "'," +
+                                                "numCalle=" + v.pNumCalle + "," +
+                                                "email='" + v.pEmail + "'," +
+                                                "telefono=" + v.pTelefono + "," +
+                                                "fec_nac='" + v.pFecNacimiento.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                "sexo= " + v.pSexo + "," +
+                                                "sueldoNeto= " + v.pSueldo + "," +
+                                                "fechaIngreso= '" + v.pFechaIngreso.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', " +
+                                                "fechaEgreso= null ," +
+                                                "idCiudad= " + v.pCiudad +
+                                                "where matricula= " + v.pMatricula;
 
+
+                        conn.nonQuery(consultaSql);
+                        lstVeterinarios.Items.Clear();
+                        cargarListaVeterinario();
+                    }
+                    else
+                    {
+                        string consultaSql = "update veterinarios " +
+                                               "set matricula= " + v.pMatricula + ", " +
+                                                "nombre='" + v.pNombre + "'," +
+                                                "Apellido='" + v.pApellido + "'," +
+                                                "calle='" + v.pCalle + "'," +
+                                                "numCalle=" + v.pNumCalle + "," +
+                                                "email='" + v.pEmail + "'," +
+                                                "telefono=" + v.pTelefono + "," +
+                                                "fec_nac='" + v.pFecNacimiento.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                "sexo= " + v.pSexo + "," +
+                                                "sueldoNeto= " + v.pSueldo + "," +
+                                                "fechaIngreso= '" + v.pFechaIngreso.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                "fechaEgreso='" + v.pFechaEgreso.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'," +
+                                                "idCiudad= " + v.pCiudad +
+                                                "where matricula= " + v.pMatricula;
+                        conn.nonQuery(consultaSql);
+                        lstVeterinarios.Items.Clear();
+                        cargarListaVeterinario();
+                    }
+
+                }
+
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            nuevo = true;            
-            habilitar(true);
-            btnLimpiar.Enabled = true;
-            txtMatricula.Enabled = false;
-            txtApellido.Focus();
             
+            if (lstVeterinarios.SelectedIndex == -1)
+                MessageBox.Show("Seleccione un veterinario");
+            else
+            {
+                nuevo = false;
+                habilitar(true);
+                btnLimpiar.Enabled = true;
+                txtMatricula.Enabled = false;
+                validarDtpEgreso();
+                txtApellido.Focus();
+            }
 
         }
 
@@ -368,9 +388,9 @@ namespace VeterinariaMenu
                 MessageBox.Show("La caja de texto Matricula no puede estar vacía");
                 return false;
             }
-            int validarstring;
+            int validarString;
 
-            if(!int.TryParse(txtMatricula.Text, out validarstring))
+            if(!int.TryParse(txtMatricula.Text, out validarString))
             {
                 MessageBox.Show("La caja de texto Matricula solo puede contener números");
                 return false;
@@ -381,7 +401,129 @@ namespace VeterinariaMenu
                 MessageBox.Show("Esta ingresando un numero negativo");
                 return false;
             }
-                    
+            //Apellido
+            if (txtApellido.Text == "")
+            {
+                MessageBox.Show("La caja de texto Apellido no puede estar vacía");
+                return false;
+            }
+            double validarDouble;
+            if(double.TryParse(txtApellido.Text,out validarDouble))
+            {
+                MessageBox.Show("Ingrese un apellido válido");
+                return false;
+            }
+            //Nombre
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("La caja de texto Nombre no puede estar vacía");
+                return false;
+            }
+            
+            if (double.TryParse(txtNombre.Text, out validarDouble))
+            {
+                MessageBox.Show("Ingrese un Nombre válido");
+                return false;
+            }
+            //calle
+            if (txtCalle.Text == "")
+            {
+                MessageBox.Show("La caja de texto Calle no puede estar vacía");
+                return false;
+            }
+
+            //Nº de calle
+            if (txtNumeroCalle.Text == "")
+            {
+                MessageBox.Show("La caja de texto Nº Calle no puede estar vaío");
+                return false;
+            }
+            int numCalle;
+            if(!int.TryParse(txtNumeroCalle.Text,out numCalle))
+            {
+                MessageBox.Show("Debe ingresar solo numeros en el campo Nº Calle");
+                return false;
+            }
+            if (Convert.ToInt32(txtNumeroCalle.Text) < 0)
+            {
+                MessageBox.Show("Nº Calle no puede contener valores negativos");
+                return false;
+            }
+            //Email
+            if (txtEmail.Text == "")
+            {
+                MessageBox.Show("La caja de texto Email no puede estar vacía");
+                return false;
+            }
+            Regex regEmail = new Regex(@"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$", RegexOptions.Compiled);
+            if (!regEmail.IsMatch(txtEmail.Text))
+            {
+                MessageBox.Show("La direccion de Email no es válida");
+                return false;
+            }
+            //Numero de Telefono
+            if (txtNumTelefono.Text == "")
+            {
+                MessageBox.Show("Telefono no puede estar vacio");
+                return false;
+            }
+            int numTelefono;
+            if (!int.TryParse(txtNumTelefono.Text, out numTelefono))
+            {
+                MessageBox.Show("Debe ingresar solo numeros en el campo Telefono");
+                return false;
+            }
+            if (Convert.ToInt32(txtNumTelefono.Text) < 0)
+            {
+                MessageBox.Show("Telefono no puede contener valores negativos");
+                return false;
+            }
+            //Sueldo neto
+            if (txtSueldo.Text == "")
+            {
+                MessageBox.Show("La caja de texto Sueldo Neto no puede estar vacía");
+                return false;
+            }
+            
+            if (!double.TryParse(txtSueldo.Text, out validarDouble))
+            {
+                MessageBox.Show("Ingrese un Sueldo Neto válido");
+                return false;
+            }
+            //Fecha Nacimiento
+            if (dtpFechaNacimiento.Value >= DateTime.Today)
+            {
+                MessageBox.Show("La fecha ingresada no es válida");
+                return false;
+            }
+            //ciudad Recidencia
+            if (cboCiudades.SelectedIndex == -1 )
+            {
+                MessageBox.Show("Seleccione una ciudad");
+                return false;
+            }
+            //Sexo
+            if(rbtFemenino.Checked==false && rbtMasculino.Checked==false)
+            {
+                MessageBox.Show("Seleccione el sexo que figura en su D.N.I.");
+                return false;
+            }           
+            //fecha Ingreso
+            if (dtpIngreso.Value >= DateTime.Today)
+            {
+                MessageBox.Show("La fecha ingresada no es válida");
+                return false;
+            }
+            //Fecha Baja
+            if (chbEnActividad.Checked == false)
+            {
+                if (dtpEgreso.Value >= DateTime.Today)
+                {
+                    MessageBox.Show("La fecha de baja no es válida");
+                    return false;
+                }
+            }
             return true;
         }
         public bool validarPk(int pk)
@@ -393,6 +535,19 @@ namespace VeterinariaMenu
             }
             return false;
         }
+        //validar que cuando el chActividad este true el dtpEgreso este false
+        public void validarDtpEgreso()
+        {
+            if (chbEnActividad.Checked)
+                dtpEgreso.Enabled = false;
+            else
+                dtpEgreso.Enabled=true;
+        }
 
+        private void chbEnActividad_CheckedChanged(object sender, EventArgs e)
+        {
+            validarDtpEgreso();
+        }
+        
     }
 }

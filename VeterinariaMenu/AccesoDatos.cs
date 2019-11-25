@@ -76,6 +76,13 @@ namespace VeterinariaMenu
             desconectar();
             return dt;
         }
+        public void enviarNull(string consultaParametrizada,DBNull value,string param)
+        {
+            conectar();
+            cmd.CommandText = consultaParametrizada;
+            cmd.Parameters.AddWithValue(param, value);   
+        }
+
     }
 
 

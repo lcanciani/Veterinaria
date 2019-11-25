@@ -66,10 +66,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetVeterinaria.cs">
+      <DependentUpon>DataSetVeterinaria.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetVeterinaria.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetVeterinaria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datosVeterinaria.cs">
+      <DependentUpon>datosVeterinaria.xsd</DependentUpon>
     </Compile>
     <Compile Include="datosVeterinaria.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -87,6 +98,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteMascotas.Designer.cs">
+      <DependentUpon>FormReporteMascotas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMascota.cs">
       <SubType>Form</SubType>
@@ -123,6 +140,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteMascotas.resx">
+      <DependentUpon>FormReporteMascotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMascota.resx">
       <DependentUpon>FrmMascota.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,11 +162,23 @@
     <EmbeddedResource Include="FrmVeterinario.resx">
       <DependentUpon>FrmVeterinario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportMascotas.rdlc" />
     <EmbeddedResource Include="ReportVet.rdlc" />
     <EmbeddedResource Include="ReporteVeterinarios.resx">
       <DependentUpon>ReporteVeterinarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="DataSetVeterinaria.xsc">
       <DependentUpon>DataSetVeterinaria.xsd</DependentUpon>
     </None>

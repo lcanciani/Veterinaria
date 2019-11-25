@@ -62,7 +62,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtNumeroCalle = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.grpBajaVeterinario = new System.Windows.Forms.GroupBox();
             this.chbEnActividad = new System.Windows.Forms.CheckBox();
             this.dtpEgreso = new System.Windows.Forms.DateTimePicker();
@@ -257,6 +256,7 @@
             // 
             this.cboCiudades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboCiudades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCiudades.FormattingEnabled = true;
             this.cboCiudades.Location = new System.Drawing.Point(155, 281);
             this.cboCiudades.Name = "cboCiudades";
@@ -375,16 +375,6 @@
             this.txtNumeroCalle.Size = new System.Drawing.Size(200, 20);
             this.txtNumeroCalle.TabIndex = 33;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(310, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // grpBajaVeterinario
             // 
             this.grpBajaVeterinario.Controls.Add(this.chbEnActividad);
@@ -406,6 +396,7 @@
             this.chbEnActividad.TabIndex = 15;
             this.chbEnActividad.Text = "En actividad";
             this.chbEnActividad.UseVisualStyleBackColor = true;
+            this.chbEnActividad.CheckedChanged += new System.EventHandler(this.chbEnActividad_CheckedChanged);
             // 
             // dtpEgreso
             // 
@@ -429,7 +420,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 546);
             this.Controls.Add(this.grpBajaVeterinario);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtNumeroCalle);
             this.Controls.Add(this.btnNuevo);
@@ -511,7 +501,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtNumeroCalle;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox grpBajaVeterinario;
         private System.Windows.Forms.CheckBox chbEnActividad;
         private System.Windows.Forms.DateTimePicker dtpEgreso;
